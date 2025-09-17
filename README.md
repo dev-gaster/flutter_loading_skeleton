@@ -29,7 +29,35 @@ Import the package in your Dart code:
 ```dart
 import 'package:flutter_loading_skeleton/flutter_loading_skeleton.dart';
 
-const like = 'sample';
+// Example usage of Skeleton widget
+SkeletonLoader(
+    width: 200,
+    height: 20,
+)
+
+// Example specifying radius. Radius is a double value.
+SkeletonLoader(
+    width: 200,
+    height: 20,
+    borderRadius: 12.0,
+)
+
+// Example specifying duration. Duration is a Duration value.
+SkeletonLoader(
+    width: 200,
+    height: 20,
+    duration: Duration(milliseconds: 1200),
+)
+
+// Example animating width
+SizedBox(
+    width: 200,
+    child: SkeletonLoader(
+        height: 20,
+        animateWidth: true,
+    ),
+)
+
 ```
 
 ## Additional information
