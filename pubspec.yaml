@@ -1,6 +1,6 @@
 name: flutter_loading_skeleton
 description: "A customizable loading skeleton widget for Flutter applications."
-version: 0.0.1
+version: 0.0.1+1
 homepage: https://github.com/devgaster/flutter_loading_skeleton
 repository: https://github.com/devgaster/flutter_loading_skeleton
 
