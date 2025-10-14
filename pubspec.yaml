@@ -14,8 +14,6 @@ topics:
   - shimmer
   - animation
   - placeholder
-  - ui
-  - performance
 
 environment:
   sdk: ^3.7.2
