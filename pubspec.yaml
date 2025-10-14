@@ -1,9 +1,6 @@
 name: flutter_loading_skeleton
-description: >
-  A highly customizable and lightweight loading skeleton widget for Flutter. 
-  Create beautiful animated placeholders with shimmer effects while content loads.
-  Perfect for improving perceived performance in lists, cards, and forms.
-version: 1.0.0
+description: "A highly customizable loading skeleton widget for Flutter with shimmer effects and smooth animations."
+version: 1.0.1
 homepage: https://github.com/dev-gaster/flutter_loading_skeleton
 repository: https://github.com/dev-gaster/flutter_loading_skeleton
 issue_tracker: https://github.com/dev-gaster/flutter_loading_skeleton/issues

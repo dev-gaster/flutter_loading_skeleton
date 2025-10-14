@@ -1,3 +1,10 @@
+/// A Flutter package that provides highly customizable loading skeleton widgets
+/// with smooth shimmer animations for improving perceived performance.
+///
+/// This library contains the [LoadingSkeleton] widget which can be used to create
+/// animated placeholders while content is loading in your Flutter applications.
+library flutter_loading_skeleton;
+
 import 'package:flutter/material.dart';
 
 /// A highly customizable loading skeleton widget that displays animated placeholders
