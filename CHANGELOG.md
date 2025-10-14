@@ -8,11 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2024-10-14
 
 ### Added
+
 - 🎉 **First stable release!**
 - Production-ready loading skeleton widget with comprehensive features
 - All documentation and examples from previous versions
 
 ### Fixed
+
 - Package preparation for publication
 - Version alignment for stable release
 
