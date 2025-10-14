@@ -1,66 +1,257 @@
 # flutter_loading_skeleton
 
-`flutter_loading_skeleton` provides customizable skeleton loading widgets for Flutter applications. Use this package to display animated placeholders while your app loads data, improving perceived performance and user experience. The package can be used to create a variety of skeleton layouts, including lists, grids, and cards, with smooth shimmer effects. User-friendly and easy to integrate, `flutter_loading_skeleton` is perfect for enhancing the loading experience in your Flutter apps.
+[![pub package](https://img.shields.io/pub/v/flutter_loading_skeleton.svg)](https://pub.dev/packages/flutter_loading_skeleton)
+[![popularity](https://img.shields.io/pub/popularity/flutter_loading_skeleton?logo=dart)](https://pub.dev/packages/flutter_loading_skeleton/score)
+[![likes](https://img.shields.io/pub/likes/flutter_loading_skeleton?logo=dart)](https://pub.dev/packages/flutter_loading_skeleton/score)
+[![pub points](https://img.shields.io/pub/points/flutter_loading_skeleton?logo=dart)](https://pub.dev/packages/flutter_loading_skeleton/score)
 
-## Features
+A highly customizable and lightweight loading skeleton widget for Flutter applications. Create beautiful animated placeholders while your content loads, significantly improving perceived performance and user experience.
 
-- Customizable skeleton widgets for lists, grids, and cards
-- Smooth shimmer animation for loading placeholders
-- Easy integration with existing Flutter widgets
-- Support for light and dark themes
-- Lightweight and fast performance
-- Flexible API for advanced customization
+## ✨ Features
 
-## Getting started
+- 🎨 **Fully Customizable** - Control width, height, border radius, colors, and animation duration
+- ⚡ **Smooth Animations** - Buttery smooth shimmer effects with customizable timing
+- 🎯 **Easy Integration** - Drop-in replacement for loading states in lists, cards, and forms
+- 🌗 **Theme Aware** - Automatically adapts to light and dark themes
+- 📱 **Responsive** - Works perfectly across all screen sizes and orientations
+- 🚀 **Performance Optimized** - Lightweight with minimal impact on app performance
+- 🔧 **Width Animation** - Optional animated width changes for dynamic loading effects
 
-To use this package, add `flutter_loading_skeleton` as a dependency in your `pubspec.yaml` file:
+## 📦 Installation
+
+Add `flutter_loading_skeleton` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
   flutter_loading_skeleton: ^0.0.1
 ```
 
-Then, run `flutter pub get` to install the package.
+Then run:
 
-## Usage
+```bash
+flutter pub get
+```
 
-Import the package in your Dart code:
+## 🚀 Quick Start
+
+Import the package and start using it immediately:
 
 ```dart
 import 'package:flutter_loading_skeleton/flutter_loading_skeleton.dart';
 
-// Example usage of Skeleton widget
-SkeletonLoader(
-    width: 200,
-    height: 20,
+// Basic skeleton
+LoadingSkeleton(
+  height: 20,
+  width: 200,
 )
 
-// Example specifying radius. Radius is a double value.
-SkeletonLoader(
-    width: 200,
-    height: 20,
-    borderRadius: 12.0,
+// Customized skeleton
+LoadingSkeleton(
+  height: 16,
+  width: 150,
+  borderRadius: 8.0,
+  duration: Duration(seconds: 1),
 )
 
-// Example specifying duration. Duration is a Duration value.
-SkeletonLoader(
-    width: 200,
-    height: 20,
-    duration: Duration(milliseconds: 1200),
-)
-
-// Example animating width
+// Animated width skeleton
 SizedBox(
-    width: 200,
-    child: SkeletonLoader(
-        height: 20,
-        animateWidth: true,
-    ),
+  width: 200,
+  child: LoadingSkeleton(
+    height: 20,
+    animateWidth: true,
+  ),
 )
 
 ```
 
-## Additional information
+## 📚 Comprehensive Usage Examples
+
+### Basic Skeleton Shapes
+
+```dart
+// Text line skeleton
+LoadingSkeleton(
+  height: 16,
+  width: 200,
+  borderRadius: 4,
+)
+
+// Circular avatar skeleton
+LoadingSkeleton(
+  height: 50,
+  width: 50,
+  borderRadius: 25,
+)
+
+// Card skeleton
+LoadingSkeleton(
+  height: 120,
+  width: double.infinity,
+  borderRadius: 12,
+)
+```
+
+### List Item Skeleton
+
+```dart
+Widget buildListItemSkeleton() {
+  return Padding(
+    padding: EdgeInsets.all(16),
+    child: Row(
+      children: [
+        // Avatar skeleton
+        LoadingSkeleton(
+          height: 40,
+          width: 40,
+          borderRadius: 20,
+        ),
+        SizedBox(width: 16),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Title skeleton
+              LoadingSkeleton(
+                height: 16,
+                width: double.infinity,
+                borderRadius: 4,
+              ),
+              SizedBox(height: 8),
+              // Subtitle skeleton
+              LoadingSkeleton(
+                height: 14,
+                width: 150,
+                borderRadius: 4,
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
+  );
+}
+```
+
+### Card Grid Skeleton
+
+```dart
+Widget buildCardSkeleton() {
+  return Card(
+    child: Padding(
+      padding: EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Image placeholder
+          LoadingSkeleton(
+            height: 120,
+            width: double.infinity,
+            borderRadius: 8,
+          ),
+          SizedBox(height: 12),
+          // Title
+          LoadingSkeleton(
+            height: 18,
+            width: double.infinity,
+            borderRadius: 4,
+          ),
+          SizedBox(height: 8),
+          // Description lines
+          LoadingSkeleton(
+            height: 14,
+            width: double.infinity,
+            borderRadius: 4,
+          ),
+          SizedBox(height: 4),
+          LoadingSkeleton(
+            height: 14,
+            width: 180,
+            borderRadius: 4,
+          ),
+        ],
+      ),
+    ),
+  );
+}
+```
+
+### Animated Width Example
+
+```dart
+// For dynamic loading effects
+SizedBox(
+  width: 250,
+  child: LoadingSkeleton(
+    height: 20,
+    borderRadius: 10,
+    animateWidth: true,
+    duration: Duration(milliseconds: 1500),
+  ),
+)
+```
+
+## 🎛️ API Reference
+
+### LoadingSkeleton Properties
+
+| Property       | Type       | Default                | Description                          |
+| -------------- | ---------- | ---------------------- | ------------------------------------ |
+| `height`       | `double`   | `16.0`                 | Height of the skeleton widget        |
+| `width`        | `double`   | `120.0`                | Width of the skeleton widget         |
+| `borderRadius` | `double`   | `8.0`                  | Corner radius for rounded rectangles |
+| `duration`     | `Duration` | `Duration(seconds: 1)` | Animation cycle duration             |
+| `animateWidth` | `bool`     | `false`                | Enable width animation effect        |
+
+### Complete Example
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:flutter_loading_skeleton/flutter_loading_skeleton.dart';
+
+class MyLoadingPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Loading Skeleton Demo')),
+      body: ListView.builder(
+        itemCount: 5,
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: LoadingSkeleton(
+              height: 40,
+              width: 40,
+              borderRadius: 20,
+            ),
+            title: LoadingSkeleton(
+              height: 16,
+              width: 200,
+            ),
+            subtitle: LoadingSkeleton(
+              height: 14,
+              width: 150,
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+```
+
+## 🎨 Theming & Customization
+
+The skeleton automatically adapts to your app's theme, using appropriate colors for light and dark modes. The animation smoothly transitions between `Colors.grey[300]` and `Colors.grey[100]` by default.
+
+## 📱 Platform Support
+
+- ✅ Android
+- ✅ iOS
+- ✅ Web
+- ✅ Windows
+- ✅ macOS
+- ✅ Linux
+
+## 🤝 Contributing
 
 For more information about the package, please visit the [GitHub repository](https://github.com/devgaster/flutter_loading_skeleton).
 
